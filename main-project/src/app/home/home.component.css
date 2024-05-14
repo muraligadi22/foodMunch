@@ -1,0 +1,30 @@
+img{
+    width:350px;
+    border-bottom-left-radius: 300px;
+    border-bottom-right-radius: 300px;
+    margin-left: 100px;
+ }
+.heading{
+    width:500px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:aliceblue;
+    color:white;
+  
+}
+.container{
+    display: flex;
+    border-radius: 10px;
+}
+.imagecontainer{
+    padding: 5px;
+    margin-left: 100px;
+}
+p{
+    font-size: 20px;
+    color:white;
+}
+body{
+    background-image: url("https://media.istockphoto.com/id/1419288565/photo/spices-herbs-and-cooking-oil-border-flat-lay.webp?b=1&s=170667a&w=0&k=20&c=3O8i0xbD_haIacCZrTGKUYx7wtueMOyMduokhsnujSY=");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

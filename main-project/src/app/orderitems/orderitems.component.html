@@ -1,0 +1,25 @@
+<app-header></app-header>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Order_Id</th>
+            <th>Food_Name</th>
+            <th>Quantity</th>
+            <th>Sub_Total</th>
+           
+        </tr>
+    </thead>
+    <tbody class="text-center">
+            <tr *ngFor="let orderitem of orderitems">
+                <td>{{orderitem.order_itemId}}</td>
+                <td>{{orderitem.food.food_name}}</td>
+                 <td>{{orderitem.quantity}}</td>
+                 <td>{{orderitem.subtotal}}</td>
+                <!-- <button (click)="viewItems(order.order_id)">OrderItem(s)</button>
+                <button (click)="cancelOrder(order.order_id)">CancelOrder</button> -->
+                <!-- <button class="delete" (click)="deleteFood(food.cart_id)">Delete</button>
+                <button (click)="inc(food)" class="add">+</button> -->
+        </tr>
+    </tbody>
+</table>
+

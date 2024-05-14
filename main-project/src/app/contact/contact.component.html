@@ -1,0 +1,19 @@
+<app-header></app-header>
+<body>
+  <header>
+    <h1>We Love to hear from you</h1>
+  </header>
+  <main>
+    <form #contactForm="ngForm" (ngSubmit)="submitForm(contactForm)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="name" ngModel name="uname" #uname="ngModel"  required>
+      <p *ngIf="uname.touched&&uname.errors?.['required']" style="color:red">*Name required</p>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="email"  ngModel name="uname1" #uname1="ngModel" required>
+      <p *ngIf="uname1.touched&&uname1.errors?.['required']" style="color:red">*Mail required</p>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" [(ngModel)]="message" ngModel name="uname3" #uname3="ngModel"  required></textarea>
+      <p *ngIf="uname3.touched&&uname3.errors?.['required']" style="color:red">*Message required</p>
+      <button type="submit" (click)="submitForm(contactForm)">Submit</button>
+    </form>
+  </main>

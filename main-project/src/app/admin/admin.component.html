@@ -1,0 +1,49 @@
+
+<div *ngIf="!showForm"class="container mob-table">
+    <div class="headers">
+        <h2 class="table-title">Manage Food</h2>
+        <button class="btn btn-success add" (click)="openForm()">Add Food</button>
+        <button  [disabled]="false" class="btn btn-danger" (click)="logOut()">LogOut</button>
+    </div><br>
+        <div class="row">
+            <div *ngFor="let food of foods">
+                <div class='col-10'>
+                    <div class='card mb-2'>
+                        <div class='card-header bg-dark-subtle'>
+                            <h5>{{food.food_name}}</h5>
+                        </div>
+                        <div class='card-body'>
+                            <h5 class='card-title'>Food_Id:{{food.food_id}}</h5>
+                            <h6 class='card-title'>Quantity:{{food.quantity}}</h6>
+                            <p class='card-text'>Price:{{food.price}}</p>
+                            <div><button class='btn btn-primary' style="margin-right:5px" (click) ="openForm(food)">Edit</button>
+                                <button class='btn btn-danger' (click)="deleteFood(food.food_id)">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+
+<div *ngIf="showForm" class="form-wrapper">
+    <div class="food-form">
+        <h2 class="text-info">{{formHeader}}</h2>
+        <div class="group">
+            <label for="foodname">Food_name:</label>
+            <input type="text" class="formControl" [(ngModel)]="foodname" />
+        </div>
+        <div class="group">
+            <label for="quantity">Quantity:</label>
+            <input type="number" class="formControl" [(ngModel)]="quantity" />
+        </div>
+        <div class="group">
+            <label for="price">Price:</label>
+            <input type="number" class="formControl" [(ngModel)]="price" />
+        </div>
+        <div class="action">
+            <button class="btn btn-primary save" (click)="saveFood()">Save</button>
+            <button class="btn btn-danger cancel" (click)="closeForm()">Cancel</button>
+        </div>
+    </div>
+</div>

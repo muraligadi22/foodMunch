@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-image: url("https://i0.wp.com/www.designlike.com/wp-content/uploads/2018/03/restaurant-1948732_1920.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ img{
+    margin-top: 150px;
+    margin-left: 50px;
+    border-radius: 20px;
+ }
+.login-container {
+    display: flex;
+    height: 620px;
+}
+.adminlogin{
+    margin-bottom: 30px;
+    margin-left: 600px;
+}
+.login-form {
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+}
+  
+h2 {
+    margin-bottom: 20px;
+    color: #000;
+    margin-left: 150px;
+}
+ 
+input {
+    width: 150%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+ 
+button {
+    width: 150%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+ 
+button:hover {
+    background-color: #393f81;
+}
+ 
+.options {
+    margin-top: 10px;
+    margin-left: 150px;
+}
+ 
+.register-link {
+    color: #000;
+    font-weight: bold;
+}
+ 
+.register-link:hover {
+    color: #393f81;
+}
+body{
+    background-color:lightgray;
+}
+input.ng-touched.ng-invalid{
+    border:2px solid red;
+}
+/* input.ng-touched.ng-valid{
+    border:2px solid green;
+} */

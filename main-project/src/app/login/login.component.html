@@ -1,0 +1,23 @@
+<body>
+  <section class="login-container">
+      <div class="login-form adminlogin">
+        <h2 style="color:white">Login</h2>
+        <form #loginForm="ngForm" (ngSubmit)="submitForm(loginForm)">
+            <div class="input-container">
+                <input type="email" id="email"  class="form-control" [(ngModel)] = "customerEmail" ngModel name="un2" #un2="ngModel" required placeholder="Email"/>
+            </div>
+            <p *ngIf="un2.touched&&un2.errors?.['required']" style="color:red">*email required</p>
+            <div class="input-container">
+                <input type="password" id="password"  class="form-control" [(ngModel)] = "password" ngModel name="un3" #un3="ngModel" minlength="5" required placeholder="Password"/>
+            </div>
+            <p *ngIf="un3.touched&&un3.errors?.['required']" style="color:red">*password required</p>
+            <button  [disabled]="false" (click)="login()">Login</button>
+
+           <div class="options">
+           <small style="font-size:large;">new user?<a routerLink="/register" style="color: blue ; " class="register-link" >Register</a></small>
+        </div>
+        </form>
+            </div>
+  </section>
+</body>
+ 

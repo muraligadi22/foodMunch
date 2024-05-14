@@ -1,0 +1,51 @@
+<app-header></app-header>
+<body>
+<div *ngIf="showform" class="container"><br>
+    <div class="head">
+        <h1>Add Your Item</h1></div>
+    <form #cartForm ="ngForm" (ngSubmit)="submitForm(cartForm)">
+        <label for="foodid">Food Id:</label>
+        <input type="number" id="foodid" name="foodid" [(ngModel)]="foodid" ngModel name="uname1" #uname1="ngModel"  placeholder="enter foodId..."required>
+        <p *ngIf="uname1.touched&&uname1.errors?.['required']" style="color:red">*FoodId required</p>
+        <label for="quantity">quantity:</label>
+        <input type="number" id="quantity" name="quantity" [(ngModel)]="quantity" min="1" ngModel name="uname2" #uname2="ngModel" placeholder="enter quantity..." required>
+        <p *ngIf="uname2.touched&&uname2.errors?.['required']" style="color:red">*Quantity required</p>
+        <button type="submit" (click)="submitForm(cartForm)">Add</button>
+        <button type="submit" (click)="getCart()" style="margin-left: 5px;">My Cart</button>
+        <p>{{s}}</p>
+    </form>
+</div>
+            <div *ngIf="!showform" class="container food-table">
+                <div class="headers">
+                    <h2 class="table-title">My Cart</h2>
+                </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Cart_Id</th>
+                        <th>Food_Name</th>
+                        <th>Customer_Id</th>
+                        <th>Quantity</th>
+                        
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                        <tr *ngFor="let food of foods">
+                            <td>{{food.cart_id}}</td>
+                             <td>{{food.food.food_name}}</td>
+                             <td>{{food.customer.customer_id}}</td>
+                            <td>{{food.quantity}}</td>
+                            <button (click)="dec(food)" class="min">-</button>
+                            <button class="delete" (click)="deleteFood(food.cart_id)">Delete</button>
+                            <button (click)="inc(food)" class="add">+</button>
+                    </tr>
+                </tbody>
+            </table>
+    
+        <div class="action">
+            <button class="btn btn-primary save" (click)="showForm()">Add More</button>
+        </div>
+    </div>
+
+</body>
+
